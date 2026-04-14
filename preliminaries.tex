@@ -1,0 +1,269 @@
+%------------------------------------------------------------------
+\section{Preliminaries}
+%------------------------------------------------------------------
+
+Hessian geometry lies at the confluence of several deep mathematical theories, 
+bridging differential geometry, convex analysis, and mathematical physics. 
+A Hessian manifold $(M, g, \nabla)$ is simultaneously a statistical manifold 
+in the sense of Amari~\cite{amari2000methods}, a locally flat manifold equipped 
+with a compatible Riemannian structure, and a natural arena for convex duality. 
+This triple nature makes Hessian geometry one of the most fertile frameworks 
+in modern geometric analysis.
+
+A central structural result, due to Shima~\cite{shima2007geometry}, asserts that 
+the tangent bundle $TM$ of any Hessian manifold carries a canonical K\"ahler 
+metric, constructed from the Hessian structure via the Dombrowski 
+construction~\cite{dombrowski1962geometry,  molitor2025kahler}. This profound connection with K\"ahler 
+geometry reveals that Hessian manifolds are, in a precise sense, the real analogues 
+of K\"ahler manifolds: just as a K\"ahler metric is locally the complex Hessian of 
+a K\"ahler potential, a Hessian metric is locally the real Hessian of a convex 
+potential function \cite{NASCIMENTOFIGUEIREDO2026102321}. This analogy is made precise through the notion of special 
+K\"ahler geometry~\cite{freed1999special, Lu1999  }, in which Hessian structures appear as 
+the real counterparts of special K\"ahler structures.
+
+In information geometry, Hessian manifolds play a fundamental role. The statistical 
+manifolds arising from exponential 
+families~\cite{amari2000methods, nielsen2020elementary} are canonical examples: 
+the Fisher information metric coincides with the Hessian of the log-partition 
+function, and the dual affine connections of Amari-Chentsov are precisely the 
+flat connections $\nabla$ and $\nabla^*$ of the Hessian structure. The Legendre 
+duality between the log-partition function and the Shannon entropy is then a 
+manifestation of the underlying convex duality inherent to Hessian geometry.
+
+Beyond these foundational connections, Hessian manifolds appear naturally in a 
+remarkably diverse range of mathematical and applied contexts. In convex 
+optimization, the Hessian of a strictly convex function defines a Riemannian 
+metric on the domain, giving rise to self-concordant barriers and interior-point 
+methods~\cite{nesterov1994interior, PuechmorelTo2023}. In combinatorics and algebraic geometry, 
+they arise in the study of polytopes, toric varieties \cite{Fujita2024}, and mirror 
+symmetry~\cite{junzhang}. In mathematical physics, Souriau's geometric 
+formulation of thermodynamics on Lie groups~\cite{souriau1997} relies essentially 
+on Hessian structures, a perspective further developed by 
+Barbaresco~\cite{barbaresco2015koszul} in the framework of Koszul-Vinberg 
+geometry. Finally, in the theory of homogeneous convex cones, the Koszul-Vinberg 
+characteristic function provides a canonical Hessian metric, connecting the 
+geometry of convex bodies to the representation theory of Lie 
+groups~\cite{vinberg1963theory}.
+
+\begin{defn}
+A \emph{locally flat manifold} (also called an \emph{affinely flat manifold}) is a 
+pair $(M, \nabla)$, where $\nabla$ is a torsion-free connection whose curvature 
+tensor vanishes identically:
+\[
+  T^\nabla = 0, \qquad R^\nabla = 0.
+\]
+The vanishing of $R^\nabla$ ensures that around every point $p \in M$ there exist 
+local coordinates $(x^1, \dots, x^n)$, called \emph{affine coordinates}, in which 
+the Christoffel symbols of $\nabla$ vanish identically. Such a connection $\nabla$ 
+is called a \emph{flat connection}, and the pair $(M, \nabla)$ is called a locally 
+flat manifold.
+\end{defn}
+
+\begin{rem}
+By a classical theorem of differential geometry, a manifold $M$ admits a locally 
+flat connection if and only if it admits an affinely flat structure, i.e., an atlas 
+whose transition maps are affine transformations of $\mathbb{R}^n$. In particular, 
+every locally flat manifold is locally diffeomorphic to an open subset of 
+$\mathbb{R}^n$ equipped with its standard flat connection.
+\end{rem}
+
+The interplay between the flat connection $\nabla$ and the Riemannian metric $g$ 
+is encoded by the \emph{difference tensor} $s = D - \nabla$, where $D$ denotes 
+the Levi-Civita connection of $(M, g)$. Since both $D$ and $\nabla$ are 
+torsion-free, $s$ is a symmetric $(1,2)$-tensor:
+\[
+  s_X Y = s_Y X \qquad \text{for all } X, Y \in \mathfrak{X}(M).
+\]
+In affine coordinates $(x^i)$, the components $s^i_{jk}$ of $s$ coincide with the 
+Christoffel symbols $\Gamma^i_{jk}$ of $D$, since $\nabla$ has vanishing 
+Christoffel symbols in these coordinates. The tensor $s$ thus measures the 
+deviation of $g$ from being compatible with $\nabla$, and plays a central role in 
+the structure theory of Hessian manifolds.
+
+\begin{defn}[\cite{shima1997geometry, shima2007geometry}]
+A Riemannian metric $g$ on a locally flat manifold $(M, \nabla)$ is called a 
+\emph{Hessian metric} if every point of $M$ admits a neighbourhood $U$ and a 
+smooth strictly convex function $\phi \in C^\infty(U)$, called a 
+\emph{Hessian potential}, such that
+\[
+  g = \nabla^2 \phi, \qquad \text{i.e.,} \qquad
+  g_{ij} = \frac{\partial^2 \phi}{\partial x^i \partial x^j},
+\]
+where $(x^1, \dots, x^n)$ is an affine coordinate system with respect to $\nabla$.
+This is the real analogue of the K\"ahler condition $g = i\partial\bar\partial\psi$.
+A locally flat manifold $(M, \nabla)$ endowed with a Hessian metric $g$ is called a 
+\emph{Hessian manifold}, denoted $(M, g, \nabla)$.
+\end{defn}
+
+The following proposition, due to Shima, provides several equivalent 
+characterizations of Hessian metrics. Condition~(2) is a \emph{Codazzi-type 
+equation} relating $\nabla$ and $g$, conditions~(3) and~(5) are its coordinate 
+expressions, and condition~(4) asserts the self-adjointness of $s_X$ with respect 
+to $g$.
+
+\begin{prop}[\cite{shima1997geometry}]
+Let $(M, \nabla)$ be a locally flat manifold and $g$ a Riemannian metric on $M$.
+The following conditions are equivalent:
+\begin{enumerate}
+  \item $g$ is a Hessian metric;
+  \item $(\nabla_X g)(Y,Z) = (\nabla_Y g)(X,Z)$ for all 
+        $X, Y, Z \in \mathfrak{X}(M)$;
+  \item In affine coordinates $(x^i)$, the components $g_{ij}$ satisfy
+        \[
+          \frac{\partial g_{ij}}{\partial x^k} = \frac{\partial g_{kj}}{\partial x^i};
+        \]
+  \item The tensor $s_X$ is self-adjoint with respect to $g$ for every 
+        $X \in \mathfrak{X}(M)$:
+        \[
+          g(s_X Y, Z) = g(Y, s_X Z) \qquad 
+          \text{for all } Y, Z \in \mathfrak{X}(M);
+        \]
+  \item $s_{ijk} = s_{jik}$, where $s_{ijk} = g_{il}\, s^l_{jk}$.
+\end{enumerate}
+\end{prop}
+
+The Hessian structure $(\nabla, g)$ on an orientable manifold gives rise to a 
+canonical closed $1$-form, introduced by Koszul in the context of convex 
+homogeneous domains~\cite{koszul1961domaines}. Koszul observed that the flat 
+connection $\nabla$ acts on the volume form $\mu_g$ of $g$ by a multiplicative 
+scalar, thereby defining a $1$-form. Following Shima~\cite{shima2007geometry}, 
+this form is called the \emph{first Koszul form} of $(\nabla, g)$.
+
+\begin{defn}[\cite{koszul1961domaines, shima1997geometry}]
+Let $(M, g, \nabla)$ be an orientable Hessian manifold, and let $\mu_g$ denote 
+the Riemannian volume form of $g$. The \emph{first Koszul form} $\omega$ of the 
+Hessian structure $(\nabla, g)$ is the $1$-form defined by
+\[
+  \nabla_X \mu_g = \omega(X)\, \mu_g,
+  \qquad X \in \mathfrak{X}(M).
+\]
+\end{defn}
+
+A direct computation in affine coordinates yields the explicit expressions
+\[
+  \omega(X) = \operatorname{tr}(s_X), \qquad
+  \omega_i
+  = \frac{1}{2}\,\frac{\partial \log \det(g_{pq})}{\partial x^i}
+  = s^k_{ki}.
+\]
+In particular, $\omega$ is a closed $1$-form~\cite{shima2007geometry}, and its 
+cohomology class $[\omega] \in H^1(M, \mathbb{R})$ is a global invariant of the 
+Hessian structure. When $(M, g, \nabla)$ arises from a convex cone via the 
+Koszul-Vinberg construction, $\omega$ coincides with the logarithmic derivative 
+of the characteristic function of the cone.
+
+By a theorem of Shima and Yagi~\cite[Theorem~4.1]{shima1997geometry}, on a 
+compact orientable Hessian manifold the first Koszul form $\omega$ satisfies
+\[
+  D\omega = 0,
+\]
+so that its pointwise norm $\|\omega\|_g$ is constant on $M$. Consequently, 
+exactly one of the following two cases occurs: either $\omega \equiv 0$, or 
+$\omega$ is everywhere non-vanishing. An example of a non-compact Hessian manifold 
+satisfying $D\omega = 0$ with $\omega \not\equiv 0$ is given 
+in~\cite[p.~282]{shima1997geometry}.
+
+In the case $\omega \equiv 0$, by~\cite[Theorem~4.2]{shima1997geometry} the 
+Levi-Civita and flat connections coincide, $D = \nabla$, so $(M, g)$ is a flat 
+Riemannian manifold. By the Bieberbach 
+theorems~\cite{bieberbach1911bewegungsgruppen, wolf2023spaces}, every compact 
+flat Riemannian manifold is finitely covered by a flat torus $\mathbb{T}^d$. 
+In particular, the first Betti number satisfies
+\[
+  0 \leq b_1(M) \leq d.
+\]
+Moreover, by a result of Shima~\cite[Corollary~6]{shima1980homogeneous}, every 
+compact connected homogeneous Hessian manifold of dimension $d$ is isometric to 
+a Euclidean torus, in which case $b_1(M) = d$.
+
+The Ricci tensor $\mathrm{Ric}^g$ of the Levi-Civita connection $D$ is expressed 
+in affine coordinates $(x^i)$ by
+\[
+  R^g_{jk} = s^{r}_{sj}\, s^{s}_{rk} - s^{r}_{rs}\, s^{s}_{jk},
+\]
+where $s^i_{jk} = \Gamma^i_{jk}$ are the Christoffel symbols of $D$ in affine 
+coordinates. Curvature properties of Hessian metrics have been studied 
+in~\cite{shima2007geometry, totaro2004curvature, yilmaz2008survey}.
+\begin{defn}
+\label{def:gauge_structure}
+A gauge structure is a couple $\left( M, \nabla\right)$ where $M$ is a smooth manifold and $\nabla$ a Koszul connection on $TM.$
+\end{defn}
+\begin{nota}
+If $\gamma \colon [0,1] \to M$ is a path, the parallel transport $T_{\gamma(0)}M \to T_{\gamma(t)}M, t \in [0,1]$ along $\gamma$ with respect to an affine connection $\nabla$ will be denoted by $\Pi^\nabla_t(\gamma),$ or simply  $\Pi_t(\gamma)$ if there is no risk of confusion.
+\end{nota}
+\begin{defn}
+\label{def:developing_map}
+Let $\left(M, \nabla \right)$ be a gauge structure on a connected manifold $M$ and let $x_0 \in M.$ Let
+$\gamma \colon [0,1] \to M$ be a path such that $x_0 = \gamma(0)$ Its development in $T_{x_0}M$ is the path:
+\begin{equation*}
+    \tau(\gamma) \colon t \in [0,1] \mapsto \int_0^t \Pi^{-1}_u(\gamma) \gamma^\prime(u) du.
+\end{equation*}
+\end{defn}
+\begin{prop}
+Let $\gamma_1, \gamma_0 \colon [0,1]$ be paths such that $\gamma_1(0)=\gamma_0(1)$ and let $\gamma_1 \cdot \gamma_0$ be their composition. Then:
+\begin{equation*}
+    \begin{split}
+        &\Pi_1(\gamma_1 \cdot \gamma_0) = \Pi_1(\gamma_1)\Pi_1(\gamma_0) \\
+        &\tau(\gamma_1 \cdot \gamma_0)(1) = \Pi_1(\gamma_1)^{-1}\tau(\gamma_0)(1) + \tau(\gamma_1)(1). \\
+    \end{split}
+\end{equation*}
+\end{prop}
+\begin{proof}
+The first property is a direct consequence of the observation that, for all $v \in T_{\gamma(0)}M,$ $\Pi_t(\gamma)v$ is a solution to the first order differential equation $\nabla_{\gamma^\prime}\Pi_t v = 0.$
+
+The second one is readily obtained by splitting the integral defining the development into a part
+\end{proof}
+When the gauge structure $(M,\nabla)$ is flat, i.e. $\nabla$ has vanishing curvature, the development depends only on the homotopy class of the path, hence is well-defined as a mapping on $\tilde{M},$ where $\tilde{M}$ is a universal covering of $M$.
+
+\begin{defn}
+\label{def:hyperbolic_koszul}
+A locally flat gauge structure $\left( M, \nabla \right)$ is said to be hyperbolic in the sense of Koszul if the image of the developing map is a convex open set that does not contain a straight line.
+\end{defn}
+
+\begin{thm}[Koszul~\cite{koszul1968deformations}]
+\label{thm:Hyper}
+Let $(M,\nabla)$ be a locally flat manifold.  
+If $(M,\nabla)$ is hyperbolic, then there exists a de Rham closed 
+differential $1$-form $\beta$ on $M$ such that its covariant derivative 
+$\nabla \beta$ is positive definite.  
+If $M$ is compact, this condition is also sufficient.
+\end{thm}
+
+Affine hyperbolic manifolds $(M,\nabla)$ are intimately connected to Hessian geometry. Given a closed $1$-form $\beta$, its covariant derivative $\nabla\beta$ yields a symmetric $2$-tensor which, by Koszul's characterization of hyperbolicity, is positive definite and thus endows $M$ with a Riemannian metric. The local exactness of closed forms allows one to write $\beta = d\varphi$ for some smooth function $\varphi$, under which $\nabla\beta$ reduces to the Hessian $d^2\varphi$.
+
+\begin{defn}
+Let $(M,\nabla)$ be a locally flat manifold. The \emph{Koszul--Vinberg complex} is defined as
+\[
+\bigl(C(\nabla), \delta \bigr) = \left( \, C(\nabla) = \bigoplus_{j \geq 0} C^j(\nabla),
+\quad \delta_j : C^j(\nabla) \to C^{j+1}(\nabla) \,\right),
+\]
+where
+\[
+C^0(\nabla) = \{ f \in C^\infty(M) \mid \nabla^2 f = 0 \}, 
+\qquad
+C^j(\nabla) = \mathrm{Hom}_{\mathbb{R}}\!\left( \otimes^j \mathcal{X}(M), \, C^\infty(M)\right), 
+\quad j \geq 1.
+\]
+
+The coboundary operator $\delta_j$ is defined by
+\begin{equation}
+\delta_0 f = df, \quad \forall f \in C^0(\nabla),
+\end{equation}
+and for $j \ge 1$,
+\begin{equation}
+\begin{aligned}
+\delta_j f (X_1 \otimes \cdots \otimes X_{q+1}) 
+&= \sum_{i=1}^j (-1)^i \Bigl( d\bigl(f(\ldots, \hat{X}_i, \ldots, X_{j+1})\bigr)(X_i) \\
+&\hspace{1.5cm} - \sum_{k \neq i} f(\ldots, \hat{X}_i, \ldots, \nabla_{X_i}X_k, \ldots) \Bigr),
+\end{aligned}
+\end{equation}
+
+where the hat $\hat{X}_i$ means omission of $X_i$.  
+
+The \emph{Total Koszul--Vinberg cohomology} is the graded vector space
+\begin{equation}
+H^j_{\tau}(\nabla) = \ker \delta_j \, / \, \mathrm{im}\,\delta_{j-1}.
+\end{equation}
+\end{defn}
+
+Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra $A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex $C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$. According to \cite{boyom2024gauge} (Proposition 9), the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.

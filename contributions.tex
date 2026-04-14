@@ -1,0 +1,251 @@
+\section{Main Result}
+
+
+\begin{thm}\label{thm:main}
+Let $(M^d, g, \nabla)$ be a closed, oriented Hessian manifold of dimension $d$, with
+nowhere vanishing first Koszul form $\omega$. The distribution $\mathcal{F}_\omega = \ker\omega$ defines a totally geodesic codimension-one foliation on $M^d$. Suppose there exists a leaf $L$ of $\mathcal{F}_\omega$ such that $\operatorname{Ric}^g|_{TL\times TL} \ge 0$. Then the Hessian metric $g$ is flat and
+\[
+1 \le b_1(M^d) \le d \quad (\text{resp. } 2 \le b_1(M^d) \le d,\; b_2(M^d) \ge 1)
+\]
+whenever the leaves of $\mathcal{F}_\omega$ are compact (resp. dense in $M^d$). Moreover, $b_1(M^d) = d$ if and only if $M^d$ is isometric to the flat torus $\mathbb{T}^d$. If additionally $\operatorname{Ric}^g|_{TL\times TL} > 0$ and $d \in \{3,4\}$, then $b_1(M^d) \in \{1, d\}$.
+\end{thm}
+
+
+
+
+\begin{proof}
+Let $(M^d, g, \nabla)$ be a closed, oriented Hessian manifold of dimension $d$, with first Koszul form $\omega$. Define the vector field $V$ by $\omega = g(V, \cdot)$. By \cite[Theorem~4.1]{shima1997geometry}, $\omega$ satisfies $D\omega = 0$, hence $d\omega = 0$ and $\|V\|_g = k$ for some non-zero constant $k$. The distribution $\ker\omega$ is a codimension-one subbundle of $TM$. From $D\omega = 0$, a direct computation gives $X(\omega(Y)) = \omega(D_X Y)$ for all $X, Y \in \Gamma(TM)$. In particular, if $Y \in \Gamma(\ker\omega)$, then $D_X Y \in \Gamma(\ker\omega)$ for every $X \in \Gamma(TM)$, and integrability of $\mathcal{F}_\omega = \ker\omega$ follows from \cite[Lemma~1.5.1]{furness1972parallel}. Moreover, $D_X Y \in \Gamma(\ker\omega)$ for all $X \in \Gamma(TM)$ implies
+\[
+  g(D_{Y'} Y,\, Z) = 0
+  \qquad
+  \forall\, Y, Y' \in \Gamma(\ker\omega),\quad \forall\, Z \in \Gamma((\ker\omega)^\perp).
+\]
+By \cite[Theorem~5.23]{tondeur2012foliations}, this condition is equivalent to $\mathcal{F}_\omega$ being a totally geodesic codimension-one foliation on $M^d$. Consequently, by \cite{blumenthal1983rham},
+\[
+M^d \simeq \frac{\widetilde{L}\times \mathbb{R}}{\pi_1(M^d)},
+\]
+where $\widetilde{L}$ is the universal cover of the leaves of $\mathcal{F}_\omega$. By \cite[p.~111]{reeb1952certaines}, the leaves of $\mathcal{F}_\omega$ are all homeomorphic, and are either all compact or all dense in $M^d$. When the leaves are compact, \cite{godbillon1991feuilletages,reeb1952certaines} gives that $M^d$ is the total space of a fibration $p \colon M^d \to \mathbb{S}^1$ with fibre $L$, and $\mathcal{F}_\omega$ is the fibre foliation $\{p^{-1}(\theta) \mid \theta \in \mathbb{S}^1\}$. Hence $\pi_1(M^d) \cong \pi_1(L) \rtimes \mathbb{Z}$, so $H_1(M^d;\mathbb{Z})$ has rank at least $1$ and $b_1(M^d) \ge 1$. When the leaves are dense, $M^d$ compact implies $\pi_1(M^d)$ is finitely generated. By \cite[pp.~45--46]{godbillon1991feuilletages}, the quotient
+\[
+  \frac{\pi_1(M^d)}{\pi_1(L)} \simeq K
+\]
+is finitely generated, torsion-free, and abelian. Since the leaves are dense, \cite[p.~46]{godbillon1991feuilletages} implies $K$ is acyclic, hence $K \simeq \mathbb{Z}^m$ for some $m \ge 2$. Thus we have a short exact sequence
+\[
+  1 \longrightarrow \pi_1(L) \longrightarrow \pi_1(M^d)
+  \longrightarrow \mathbb{Z}^m \longrightarrow 1, \qquad m \ge 2.
+\]
+Abelianisation is a right exact functor, so this induces
+\[
+  H_1(L;\mathbb{Z}) \xrightarrow{i_*} H_1(M^d;\mathbb{Z})
+  \xrightarrow{p_*} \mathbb{Z}^m \longrightarrow 0,
+\]
+and therefore $m \le \operatorname{rank}H_1(M;\mathbb{Z}) = b_1(M^d)$, giving $b_1(M^d) \ge m \ge 2$. 
+
+Since $D\omega = 0$ implies $DV = 0$, Chern's criterion \cite{chern1966geometry} gives $b_2(M^d) \ge b_1(M^d) - 1$, hence $b_2(M^d) \ge 1$.
+
+Using the orthogonal decomposition $TM^d = \mathbb{R}V \oplus \ker\omega$, any vector field $U \in \Gamma(TM^d)$ can be written as $U = fV + X$ with $f \in C^\infty(M^d)$ and $X \in \Gamma(\ker\omega)$. A direct computation gives
+\[
+  \operatorname{Ric}(U,U)
+  = f^2\operatorname{Ric}(V,V) + 2f\operatorname{Ric}(X,V)
+    + \operatorname{Ric}(X,X).
+\]
+Since $DV = 0$, the vector field $V$ is parallel, and the two cross terms vanish, leaving
+\[
+  \operatorname{Ric}(U,U) = \operatorname{Ric}(X,X).
+\]
+By assumption, $\operatorname{Ric}^g|_{TL \times TL} \ge 0$, so $\operatorname{Ric}(X,X) \ge 0$ for all $X \in \Gamma(\ker\omega)$, and consequently $\operatorname{Ric}^g \ge 0$ on all of $TM^d$. Bochner's theorem \cite{bochner1946vector,yano1953curvature} then yields $b_1(M^d) \le d$, and we deduce that $2 - \gamma \le b_1(M^d) \le d, \gamma = 1 \text{ if leaves are compact, and } \gamma = 0 \text{ if leaves are dense.}$
+Moreover, when $b_1(M^d) = d$, Bochner's theorem forces $M^d$ to be isometric to the flat torus $\mathbb{T}^d$.
+
+Since the universal cover of a compact Hessian manifold is a convex domain \cite{shima1981hessian}, it is contractible, so $\pi_k(M^d) = 0$ for all $k \ge 2$ and $M$ is a $K(\pi_1(M^d),1)$-space. The Cheeger--Gromoll splitting theorem \cite[Corollary~7.3.13]{petersen2006riemannian} then implies that $g$ is flat. 
+
+Now assume additionally that $\operatorname{Ric}^g|_{TL \times TL} > 0$. In the compact leaves case, by \cite[p.~46]{godbillon1991feuilletages}, $m = 1$, and the short exact sequence
+\[
+  1 \longrightarrow \ker(p_*)
+  \longrightarrow H_1(M^d;\mathbb{Z})
+  \longrightarrow \mathbb{Z}
+  \longrightarrow 1
+\]
+gives $b_1(M^d) = \operatorname{rank}(\ker p_*) + 1$. Since
+\[
+  \operatorname{rank}(\ker p_*)
+  = \operatorname{rank}\!\left(H_1(L;\mathbb{Z}) \big/ \ker(i_*)\right)
+  \le \operatorname{rank}(H_1(L;\mathbb{Z})) = b_1(L),
+\]
+we obtain $b_1(M^d) \le b_1(L) + 1$. By Myers' theorem \cite{myers1941riemannian}, positive Ricci curvature implies $\pi_1(L)$ is finite, so $b_1(L) = 0$, and therefore $b_1(M^d) = 1$.
+
+In the dense leaves case, assume $d = 4$. Since $M^d$ is compact, \cite[Exercise~10.4.28]{conlon2001differentiable} implies the leaves are complete. The leaves are three-dimensional complete non-compact (open) manifolds with positive Ricci curvature, hence diffeomorphic to $\mathbb{R}^3$ \cite{shi1989complete} (Theorem 2.5), and thus these leaves are simply connected. Therefore $\pi_1(M^d) \simeq \mathbb{Z}^m$ for some $m \ge 2$, so $M^d$ is a $K(\mathbb{Z}^m,1)$-space, homotopy-equivalent to $\mathbb{T}^m$ \cite[p.~49]{godbillon1991feuilletages}. Since $M^d$ is orientable, $H_d(M^d;\mathbb{Z}) \simeq \mathbb{Z}$, while $H_d(\mathbb{T}^m;\mathbb{Z}) \simeq \mathbb{Z}^{\binom{m}{d}}$, so $\binom{m}{d} = 1$, which gives $m = d$. Hence $M^d$ is homeomorphic to $\mathbb{T}^4$ and $b_1(M) = 4$. In the case $d = 3$, by the same argument, the leaves are open surfaces. The leaves are thus diffeomorphic to either $\mathbb{R}^2$, the M\"obius strip, or $\mathbb{S}^1 \times \mathbb{R}$ \cite[p.~49]{godbillon1991feuilletages}. Since $M^d$ is orientable, $\mathcal{F}_\omega$ is transversally orientable, hence its leaves are orientable; the M\"obius strip is therefore excluded. The leaves are thus diffeomorphic to either $\mathbb{R}^2$ or $\mathbb{S}^1 \times \mathbb{R}$. Positive Ricci curvature on these surfaces implies $b_1(L) = 0$ by \cite{anderson1990topology}, so the leaves are diffeomorphic to $\mathbb{R}^2$ and are simply connected. The same argument as in the $4$-dimensional case yields that $M^d$ is homeomorphic to $\mathbb{T}^3$ and $b_1(M^d) = 3$.
+
+\medskip
+In all cases, $b_1(M) \in \{1, d\}$, completing the proof.
+\end{proof}
+
+We can now state the following corollaries
+
+\begin{cor}\label{cor:no-nonneg-ricci}
+Let $(M^d, g, \nabla)$ be a closed, oriented Hessian manifold. 
+Suppose that either $(M^d, g, \nabla)$ is of Koszul type, or 
+$(M^d, \nabla)$ is a radiant affine manifold. Then no leaf $L$ 
+of the foliation $\mathcal{F}_\omega=\ker\,\omega,$
+where $\omega$ denotes the first Koszul form of $(M^d, g, \nabla)$, 
+carries non-negative Ricci curvature with respect to the induced 
+metric $g|_L$.
+\end{cor}
+
+\begin{proof}
+\text{Case 1: $(M^d, g, \nabla)$ is of Koszul type.}
+
+By definition, there exists a closed $1$-form $\omega$ on $M$ such that
+$g = \nabla\omega$. By \cite{koszul1968deformations, shima2007geometry},
+this implies that $(M, \nabla)$ is affine hyperbolic, and $M$ is
+diffeomorphic to an orbit space
+\[
+M \;\cong\; \Gamma \backslash O,
+\]
+where $O \subset \mathbb{R}^d$ is an open convex domain containing no
+complete affine line, and $\Gamma$ is a discrete subgroup of the affine
+group $\mathrm{Aff}(d)$ acting properly and freely on $O$
+(see Koszul~\cite{koszul1968deformations} and Vey~\cite{vey1969notion}).
+
+By \cite[Theorem~8.4]{shima2007geometry}, there exists an affine coordinate
+system $\{y^1, \ldots, y^d\}$ such that $y^i > 0$ on $O$ for all $i$,
+and the tube domain $TO = \mathbb{R}^d + \sqrt{-1}\,O$ admits a Bergman
+kernel $K = K(y^1, \ldots, y^d)$. The volume element on $O$ is given by
+\[
+\nu_O \;=\; \sqrt{K}\; dy^1 \wedge \cdots \wedge dy^d,
+\]
+and the first Koszul form on $O$ takes the explicit form
+\[
+\alpha \;=\; \frac{1}{2} \sum_{i} \frac{\partial \log K}{\partial y^i}\, dy^i.
+\]
+Denoting by $p : O \to M$ the covering projection, one has $p^*\omega = \alpha$
+and $p^*\nu_g = \nu_O$. Moreover, a direct computation using the flatness
+of the affine connection $\nabla^0$ (defined by $\nabla^0 \partial_i = 0$
+and satisfying $dp(\nabla^0) = \nabla$) yields:
+\[
+\nabla^0 \nu_O \;=\; \alpha \otimes \nu_O.
+\]
+Since $\alpha$ is $\Gamma$-invariant, this relation descends to $M$ and gives
+\[
+\nabla \nu_g \;=\; \omega \otimes \nu_g,
+\]
+confirming that $\omega$ is indeed the first Koszul form of the Hessian
+structure $(g, \nabla)$. In particular, since the domain $O$ is a proper
+convex domain and the Bergman kernel $K$ is non-constant on $O$, the
+form $\omega$ is nowhere vanishing on $M$.
+
+Suppose for contradiction that some leaf $L$ of
+$\mathcal{F}_\omega = \ker\,\omega$ satisfies
+\[
+\mathrm{Ric}^g\big|_{TL \times TL} \;\geq\; 0.
+\]
+Then by Theorem~\ref{thm:main}, the Hessian metric $g = \nabla\omega$ must
+be flat, so that
+\[
+M^d \;\simeq\; \mathbb{R}^d / \Lambda,
+\]
+where $\Lambda \subset \mathbb{R}^d$ is a Bieberbach group acting freely
+and properly discontinuously on $\mathbb{R}^d$, and the universal cover
+of $M^d$ is $\mathbb{R}^d$. However, this contradicts the hyperbolicity
+of $(M, \nabla)$, whose universal cover must be a proper convex domain
+strictly contained in $\mathbb{R}^d$. Hence no leaf of $\mathcal{F}_\omega$
+admits non-negative Ricci curvature with respect to $g|_L$.
+
+\medskip
+
+\text{Case 2: $(M^d, \nabla)$ is a radiant affine manifold.}
+
+By \cite[Theorem~5.8]{Gnandi2026}, there exists a closed $1$-form $\Omega$
+on $M$ such that $g = \nabla^*\Omega$, where $\nabla^*$ denotes the dual
+connection of $\nabla$, defined by
+\[
+\nabla^* \;=\; 2D - \nabla,
+\]
+with $D$ the Levi-Civita connection of $g$. It is well known that
+$(g, \nabla^*)$ is itself a Hessian structure on $M$, so that
+$(M^d, g, \nabla^*)$ is a Hessian manifold of Koszul type. The conclusion
+then follows immediately from Case~1 applied to $(M^d, g, \nabla^*)$.
+\end{proof}
+
+\begin{cor}\label{cor:noo-nonneg-ricci}
+Let $(M^d, g, \nabla)$ be a closed, oriented Hessian manifold. 
+If the cohomology class $[g] \in H^2_{KV}(M^d, C^{\infty}(M))$ 
+is trivial, then no leaf $L$ of the foliation
+$\mathcal{F}_\omega \;=\; \ker\,\omega,$
+where $\omega$ denotes the first Koszul form of $(M^d, g, \nabla)$,
+carries non-negative Ricci curvature with respect to the induced 
+metric $g|_L$.
+\end{cor}
+
+\begin{proof}
+By \cite[Corollary~2]{boyom2024gauge}, the vanishing of the 
+Koszul--Vinberg cohomology class 
+$[g] \in H^2_{KV}(M^d, C^{\infty}(M))$ implies that 
+$(M^d, g, \nabla)$ is a Hessian manifold of Koszul type. 
+The conclusion then follows immediately from 
+Corollary~\ref{cor:no-nonneg-ricci}.
+\end{proof}
+
+The following proposition gives a complete classification of closed, 
+oriented Hessian $3$-manifolds satisfying the ricci condition 
+of Theorem~\ref{thm:main}.
+
+\begin{prop}\label{pro:dim3}
+Under the same hypotheses as in Theorem~\ref{thm:main} with $d = 3$,
+if $\operatorname{Ric}^g|_{TL \times TL} \geq 0$, then 
+$b_1(M^3) \in \{1, 3\}$ and $M^3$ is diffeomorphic to either the 
+flat torus $\mathbb{T}^3$, or a torus bundle 
+$\mathbb{T}^2 \hookrightarrow M^3 \to \mathbb{S}^1$ whose monodromy 
+$A \in \mathrm{SL}(2,\mathbb{Z})$ is periodic, i.e.\ conjugate in 
+$\mathrm{GL}(2,\mathbb{Z})$ to one of
+\[
+\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \qquad
+\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}, \qquad
+\begin{pmatrix} 0 & -1 \\ 1 & 1 \end{pmatrix}, \qquad
+\begin{pmatrix} -1 & -1 \\ 1 & 0 \end{pmatrix}.
+\]
+\end{prop}
+
+\begin{proof}
+By Theorem~\ref{thm:main}, the condition 
+$\operatorname{Ric}^g|_{TL \times TL} \geq 0$ implies that 
+$b_1(M^3) \in \{1, 2, 3\}$. By 
+\cite[Theorem~3.5]{gnandi2025topology}, the case $b_1(M^3) = 2$ 
+is excluded, so that $b_1(M^3) \in \{1, 3\}$.
+
+Moreover, Theorem~\ref{thm:main} implies that the Hessian metric 
+$g$ is flat, so that $(M^3, g)$ is a closed, oriented, flat 
+Riemannian $3$-manifold. By Bieberbach's theorem, $M^3$ is finitely 
+covered by $\mathbb{T}^3$. The classification of closed oriented 
+flat $3$-manifolds (see~\cite{Wolf, bieberbach1912bewegungsgruppen}) 
+shows that $M^3$ is either diffeomorphic to $\mathbb{T}^3$, or 
+fibers over $\mathbb{S}^1$ with fiber $\mathbb{T}^2$ and periodic 
+monodromy $A \in \mathrm{SL}(2,\mathbb{Z})$. By 
+\cite[Theorem~4.1]{gnandi2025topology}, the finite-order elements 
+of $\mathrm{SL}(2,\mathbb{Z})$ are precisely those conjugate in 
+$\mathrm{GL}(2,\mathbb{Z})$ to the four matrices listed above, 
+which completes the proof.
+\end{proof}
+
+\begin{rem}\label{rem:nonorientable}
+Theorem~\ref{thm:main} extends to the non-orientable case. Indeed,
+let $(M^d, g, \nabla)$ be a compact, possibly non-orientable Hessian
+manifold, and let $\pi \colon \hat{M}^d \to M^d$ be its orientation
+double cover. Then $(\hat{M}^d, \pi^*g, \pi^*\nabla)$ is a compact
+oriented Hessian manifold to which Theorem~\ref{thm:main} applies,
+yielding that $\pi^*g$ is flat on $\hat{M}^d$. Since $\pi$ is a 
+local isometry, $g$ is flat on $M^d$ as well. Moreover, using 
+\cite[Theorem~(4),~p.~716]{brasher1969homology}
+\[
+b_s(\hat{M}) = b_s(M) + b_{d-s}(M),
+\]
+applied with $s = 1$, we obtain
+\[
+b_1(M) \;\leq\; b_1(\hat{M}) \;\leq\; d.
+\]
+\end{rem}
+
+\begin{cor}
+
+\end{cor}
+
+
+

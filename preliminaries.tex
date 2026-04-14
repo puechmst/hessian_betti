@@ -184,12 +184,16 @@ in affine coordinates $(x^i)$ by
 where $s^i_{jk} = \Gamma^i_{jk}$ are the Christoffel symbols of $D$ in affine 
 coordinates. Curvature properties of Hessian metrics have been studied 
 in~\citep{shima2007, totaro2004, yilmaz2008}.
+
 \begin{defn}
 \label{def:gauge_structure}
 A gauge structure is a couple $\left( M, \nabla\right)$ where $M$ is a smooth manifold and $\nabla$ a Koszul connection on $TM.$
 \end{defn}
 \begin{nota}
-If $\gamma \colon [0,1] \to M$ is a path, the parallel transport $T_{\gamma(0)}M \to T_{\gamma(t)}M, t \in [0,1]$ along $\gamma$ with respect to an affine connection $\nabla$ will be denoted by $\Pi^\nabla_t(\gamma),$ or simply  $\Pi_t(\gamma)$ if there is no risk of confusion.
+If $\gamma \colon [0,1] \to M$ is a path, the parallel transport $T_{\gamma(0)}M \to T_{\gamma(t)}M, t \in [0,1]$ along $\gamma$ 
+with respect to an affine connection $\nabla$
+will be denoted by $\Pi^\nabla_t(\gamma),$ or simply  $\Pi_t(\gamma)$ 
+if there is no risk of confusion.
 \end{nota}
 \begin{defn}
 \label{def:developing_map}
@@ -200,6 +204,7 @@ $\gamma \colon [0,1] \to M$ be a path such that $x_0 = \gamma(0)$ Its developmen
 \end{equation*}
 \end{defn}
 \begin{prop}
+  \label{prop:affine_dev}
 Let $\gamma_1, \gamma_0 \colon [0,1]$ be paths such that $\gamma_1(0)=\gamma_0(1)$ and let $\gamma_1 \cdot \gamma_0$ be their composition. Then:
 \begin{equation*}
     \begin{split}
@@ -212,12 +217,39 @@ Let $\gamma_1, \gamma_0 \colon [0,1]$ be paths such that $\gamma_1(0)=\gamma_0(1
 The first property is a direct consequence of the observation that, for all $v \in T_{\gamma(0)}M,$ $\Pi_t(\gamma)v$ is a solution to the first order differential equation $\nabla_{\gamma^\prime}\Pi_t v = 0.$
 The second one is readily obtained by splitting the integral defining the development into a part
 \end{proof}
-When the gauge structure $(M,\nabla)$ is flat, i.e. $\nabla$ has vanishing curvature, the development depends only on the homotopy class of the path, hence is well-defined as a mapping on $\tilde{M},$ where $\tilde{M}$ is a universal covering of $M$.
+In the sequel $\tau_1(\gamma)$ will stand for $\tau(\gamma)(1)$ and will be called the development of 
+$\gamma$ at $x_0.$
+When the gauge structure $(M,\nabla)$ is flat, i.e. $\nabla$ has vanishing curvature,
+ the development depends only on the homotopy class of the path, 
+ hence is well-defined as a mapping on $\tilde{M},$ where $\tilde{M}$ is a universal covering of $M$.
+ The next proposition is a direct consequence of proposition \ref{prop:affine_dev}.
+ \begin{prop}
+  \label{prop:affine_action}
+ Let $(M, \nabla)$ be a locally flat gauge structure and $x_0 \in M$. Let $\pi_{x_0}$ be the fundamental group
+ at $x_0$. Then the mapping $\gamma \in \pi_{x_0} \mapsto \left( \Phi_1(\gamma), \tau_1(\gamma) \right)$ 
+ is an affine representation of $\Gamma$ in $T_{x_0}M.$
+ \end{prop}
 
 \begin{defn}
 \label{def:hyperbolic_koszul}
-A locally flat gauge structure $\left( M, \nabla \right)$ is said to be hyperbolic in the sense of Koszul if the image of the developing map is a convex open set that does not contain a straight line.
+A locally flat gauge structure $\left( M, \nabla \right)$ is said to be 
+hyperbolic in the sense of Koszul \citep{koszul1968} if the universal covering $\tilde{M}$ provided 
+with the induced connection $\nabla$ is isomorphic to an open convex subset of $\R^n$ containing non line.
 \end{defn}
+If $\left( M, \nabla \right)$ is hyperbolic, then the domain $E^\nabla_{x_0} \subset T_{x_0}$ of the 
+exponential $\exp^\nabla$ is a convex containing no line and 
+\begin{equation*}
+ \begin{tikzcd}
+E^\nabla_{x_0} \subset T_{x_0} \ar[r,"\exp_{x_0}^\nabla"] & M
+\end{tikzcd}   
+\end{equation*}
+is a universal covering of $M.$ It is invariant by the affine action of proposition \ref{prop:affine_action},
+thus, if $E^\nabla_{x_0}$ is a cone, the action is in fact linear. 
+If $M$ is compact, then the converse proposition holds, that is if the action is linear, then $E^\nabla_{x_0}$ 
+is a cone.
+When the above properties hold, then there exists an affine vector field $X$ and a Riemannian metric $g$ such that 
+$\mathcal{L}_X g = 0,$ where $\mathcal{L}$ is the Lie derivative. When $M$ is hyperbolic and compact, 
+$X$ is unique.
 
 \begin{thm}[Koszul~\citep{koszul1968}]
 \label{thm:Hyper}
@@ -269,5 +301,10 @@ H^j_{\tau}(\nabla) = \ker \delta_j \, / \, \mathrm{im}\,\delta_{j-1}.
 \end{equation}
 \end{defn}
 
-Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra $A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex $C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$.
-According to \citep{boyom2024} (Proposition 9), the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.
+Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra 
+$A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex 
+$C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$.
+According to \citep{boyom2024} (Proposition 9), 
+the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex
+ $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, 
+ and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.

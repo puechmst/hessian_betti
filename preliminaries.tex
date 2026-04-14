@@ -5,25 +5,25 @@
 Hessian geometry lies at the confluence of several deep mathematical theories, 
 bridging differential geometry, convex analysis, and mathematical physics. 
 A Hessian manifold $(M, g, \nabla)$ is simultaneously a statistical manifold 
-in the sense of Amari~\cite{amari2000methods}, a locally flat manifold equipped 
+in the sense of Amari~\citep{amari2000}, a locally flat manifold equipped 
 with a compatible Riemannian structure, and a natural arena for convex duality. 
 This triple nature makes Hessian geometry one of the most fertile frameworks 
 in modern geometric analysis.
 
-A central structural result, due to Shima~\cite{shima2007geometry}, asserts that 
+A central structural result, due to Shima~\citep{shima2007}, asserts that 
 the tangent bundle $TM$ of any Hessian manifold carries a canonical K\"ahler 
 metric, constructed from the Hessian structure via the Dombrowski 
-construction~\cite{dombrowski1962geometry,  molitor2025kahler}. This profound connection with K\"ahler 
+construction~\citep{Dombrowski1962,  molitor2025}. This profound connection with K\"ahler 
 geometry reveals that Hessian manifolds are, in a precise sense, the real analogues 
 of K\"ahler manifolds: just as a K\"ahler metric is locally the complex Hessian of 
 a K\"ahler potential, a Hessian metric is locally the real Hessian of a convex 
-potential function \cite{NASCIMENTOFIGUEIREDO2026102321}. This analogy is made precise through the notion of special 
-K\"ahler geometry~\cite{freed1999special, Lu1999  }, in which Hessian structures appear as 
+potential function \citep{danuzia2026}. This analogy is made precise through the notion of special 
+K\"ahler geometry~\citep{freed1999, Lu1999}, in which Hessian structures appear as 
 the real counterparts of special K\"ahler structures.
 
 In information geometry, Hessian manifolds play a fundamental role. The statistical 
 manifolds arising from exponential 
-families~\cite{amari2000methods, nielsen2020elementary} are canonical examples: 
+families~\citep{amari2000, nielsen2020} are canonical examples: 
 the Fisher information metric coincides with the Hessian of the log-partition 
 function, and the dual affine connections of Amari-Chentsov are precisely the 
 flat connections $\nabla$ and $\nabla^*$ of the Hessian structure. The Legendre 
@@ -34,16 +34,16 @@ Beyond these foundational connections, Hessian manifolds appear naturally in a
 remarkably diverse range of mathematical and applied contexts. In convex 
 optimization, the Hessian of a strictly convex function defines a Riemannian 
 metric on the domain, giving rise to self-concordant barriers and interior-point 
-methods~\cite{nesterov1994interior, PuechmorelTo2023}. In combinatorics and algebraic geometry, 
-they arise in the study of polytopes, toric varieties \cite{Fujita2024}, and mirror 
-symmetry~\cite{junzhang}. In mathematical physics, Souriau's geometric 
-formulation of thermodynamics on Lie groups~\cite{souriau1997} relies essentially 
+methods~\citep{nesterov1994, PuechmorelTo2023}. In combinatorics and algebraic geometry, 
+they arise in the study of polytopes, toric varieties \citep{Fujita2024}, and mirror 
+symmetry~\citep{zhang2020}. In mathematical physics, Souriau's geometric 
+formulation of thermodynamics on Lie groups~\citep{souriau1997} relies essentially 
 on Hessian structures, a perspective further developed by 
-Barbaresco~\cite{barbaresco2015koszul} in the framework of Koszul-Vinberg 
+Barbaresco~\citep{barbaresco2015} in the framework of Koszul-Vinberg 
 geometry. Finally, in the theory of homogeneous convex cones, the Koszul-Vinberg 
 characteristic function provides a canonical Hessian metric, connecting the 
 geometry of convex bodies to the representation theory of Lie 
-groups~\cite{vinberg1963theory}.
+groups~\citep{vinberg1963}.
 
 \begin{defn}
 A \emph{locally flat manifold} (also called an \emph{affinely flat manifold}) is a 
@@ -80,7 +80,7 @@ Christoffel symbols in these coordinates. The tensor $s$ thus measures the
 deviation of $g$ from being compatible with $\nabla$, and plays a central role in 
 the structure theory of Hessian manifolds.
 
-\begin{defn}[\cite{shima1997geometry, shima2007geometry}]
+\begin{defn}[\citep{shima1997, shima2007}]
 A Riemannian metric $g$ on a locally flat manifold $(M, \nabla)$ is called a 
 \emph{Hessian metric} if every point of $M$ admits a neighbourhood $U$ and a 
 smooth strictly convex function $\phi \in C^\infty(U)$, called a 
@@ -101,7 +101,7 @@ equation} relating $\nabla$ and $g$, conditions~(3) and~(5) are its coordinate
 expressions, and condition~(4) asserts the self-adjointness of $s_X$ with respect 
 to $g$.
 
-\begin{prop}[\cite{shima1997geometry}]
+\begin{prop}[\citep{shima1997}]
 Let $(M, \nabla)$ be a locally flat manifold and $g$ a Riemannian metric on $M$.
 The following conditions are equivalent:
 \begin{enumerate}
@@ -124,12 +124,12 @@ The following conditions are equivalent:
 
 The Hessian structure $(\nabla, g)$ on an orientable manifold gives rise to a 
 canonical closed $1$-form, introduced by Koszul in the context of convex 
-homogeneous domains~\cite{koszul1961domaines}. Koszul observed that the flat 
+homogeneous domains~\citep{koszul1961}. Koszul observed that the flat 
 connection $\nabla$ acts on the volume form $\mu_g$ of $g$ by a multiplicative 
-scalar, thereby defining a $1$-form. Following Shima~\cite{shima2007geometry}, 
+scalar, thereby defining a $1$-form. Following Shima~\citep{shima2007}, 
 this form is called the \emph{first Koszul form} of $(\nabla, g)$.
 
-\begin{defn}[\cite{koszul1961domaines, shima1997geometry}]
+\begin{defn}[\citep{koszul1961, shima1997}]
 Let $(M, g, \nabla)$ be an orientable Hessian manifold, and let $\mu_g$ denote 
 the Riemannian volume form of $g$. The \emph{first Koszul form} $\omega$ of the 
 Hessian structure $(\nabla, g)$ is the $1$-form defined by
@@ -146,13 +146,13 @@ A direct computation in affine coordinates yields the explicit expressions
   = \frac{1}{2}\,\frac{\partial \log \det(g_{pq})}{\partial x^i}
   = s^k_{ki}.
 \]
-In particular, $\omega$ is a closed $1$-form~\cite{shima2007geometry}, and its 
+In particular, $\omega$ is a closed $1$-form~\citep{shima2007}, and its 
 cohomology class $[\omega] \in H^1(M, \mathbb{R})$ is a global invariant of the 
 Hessian structure. When $(M, g, \nabla)$ arises from a convex cone via the 
 Koszul-Vinberg construction, $\omega$ coincides with the logarithmic derivative 
 of the characteristic function of the cone.
 
-By a theorem of Shima and Yagi~\cite[Theorem~4.1]{shima1997geometry}, on a 
+By a theorem of Shima and Yagi~\citep[Theorem~4.1]{shima1997}, on a 
 compact orientable Hessian manifold the first Koszul form $\omega$ satisfies
 \[
   D\omega = 0,
@@ -161,18 +161,18 @@ so that its pointwise norm $\|\omega\|_g$ is constant on $M$. Consequently,
 exactly one of the following two cases occurs: either $\omega \equiv 0$, or 
 $\omega$ is everywhere non-vanishing. An example of a non-compact Hessian manifold 
 satisfying $D\omega = 0$ with $\omega \not\equiv 0$ is given 
-in~\cite[p.~282]{shima1997geometry}.
+in~\citep[p.~282]{shima1997}.
 
-In the case $\omega \equiv 0$, by~\cite[Theorem~4.2]{shima1997geometry} the 
+In the case $\omega \equiv 0$, by~\citep[Theorem~4.2]{shima1997} the 
 Levi-Civita and flat connections coincide, $D = \nabla$, so $(M, g)$ is a flat 
 Riemannian manifold. By the Bieberbach 
-theorems~\cite{bieberbach1911bewegungsgruppen, wolf2023spaces}, every compact 
+theorems~\citep{bieberbach1911, wolf2023}, every compact 
 flat Riemannian manifold is finitely covered by a flat torus $\mathbb{T}^d$. 
 In particular, the first Betti number satisfies
 \[
   0 \leq b_1(M) \leq d.
 \]
-Moreover, by a result of Shima~\cite[Corollary~6]{shima1980homogeneous}, every 
+Moreover, by a result of Shima~\citep[Corollary~6]{shima1980}, every 
 compact connected homogeneous Hessian manifold of dimension $d$ is isometric to 
 a Euclidean torus, in which case $b_1(M) = d$.
 
@@ -183,7 +183,7 @@ in affine coordinates $(x^i)$ by
 \]
 where $s^i_{jk} = \Gamma^i_{jk}$ are the Christoffel symbols of $D$ in affine 
 coordinates. Curvature properties of Hessian metrics have been studied 
-in~\cite{shima2007geometry, totaro2004curvature, yilmaz2008survey}.
+in~\citep{shima2007, totaro2004, yilmaz2008}.
 \begin{defn}
 \label{def:gauge_structure}
 A gauge structure is a couple $\left( M, \nabla\right)$ where $M$ is a smooth manifold and $\nabla$ a Koszul connection on $TM.$
@@ -210,7 +210,6 @@ Let $\gamma_1, \gamma_0 \colon [0,1]$ be paths such that $\gamma_1(0)=\gamma_0(1
 \end{prop}
 \begin{proof}
 The first property is a direct consequence of the observation that, for all $v \in T_{\gamma(0)}M,$ $\Pi_t(\gamma)v$ is a solution to the first order differential equation $\nabla_{\gamma^\prime}\Pi_t v = 0.$
-
 The second one is readily obtained by splitting the integral defining the development into a part
 \end{proof}
 When the gauge structure $(M,\nabla)$ is flat, i.e. $\nabla$ has vanishing curvature, the development depends only on the homotopy class of the path, hence is well-defined as a mapping on $\tilde{M},$ where $\tilde{M}$ is a universal covering of $M$.
@@ -220,7 +219,7 @@ When the gauge structure $(M,\nabla)$ is flat, i.e. $\nabla$ has vanishing curva
 A locally flat gauge structure $\left( M, \nabla \right)$ is said to be hyperbolic in the sense of Koszul if the image of the developing map is a convex open set that does not contain a straight line.
 \end{defn}
 
-\begin{thm}[Koszul~\cite{koszul1968deformations}]
+\begin{thm}[Koszul~\citep{koszul1968}]
 \label{thm:Hyper}
 Let $(M,\nabla)$ be a locally flat manifold.  
 If $(M,\nabla)$ is hyperbolic, then there exists a de Rham closed 
@@ -229,7 +228,11 @@ $\nabla \beta$ is positive definite.
 If $M$ is compact, this condition is also sufficient.
 \end{thm}
 
-Affine hyperbolic manifolds $(M,\nabla)$ are intimately connected to Hessian geometry. Given a closed $1$-form $\beta$, its covariant derivative $\nabla\beta$ yields a symmetric $2$-tensor which, by Koszul's characterization of hyperbolicity, is positive definite and thus endows $M$ with a Riemannian metric. The local exactness of closed forms allows one to write $\beta = d\varphi$ for some smooth function $\varphi$, under which $\nabla\beta$ reduces to the Hessian $d^2\varphi$.
+Affine hyperbolic manifolds $(M,\nabla)$ are intimately connected to Hessian geometry. 
+Given a closed $1$-form $\beta$, its covariant derivative $\nabla\beta$ yields a symmetric $2$-tensor which, 
+by Koszul's characterization of hyperbolicity, is positive definite and thus endows $M$ with a Riemannian metric. 
+The local exactness of closed forms allows one to write $\beta = d\varphi$ for some smooth function $\varphi$, 
+under which $\nabla\beta$ reduces to the Hessian $d^2\varphi$.
 
 \begin{defn}
 Let $(M,\nabla)$ be a locally flat manifold. The \emph{Koszul--Vinberg complex} is defined as
@@ -266,4 +269,5 @@ H^j_{\tau}(\nabla) = \ker \delta_j \, / \, \mathrm{im}\,\delta_{j-1}.
 \end{equation}
 \end{defn}
 
-Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra $A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex $C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$. According to \cite{boyom2024gauge} (Proposition 9), the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.
+Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra $A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex $C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$.
+According to \citep{boyom2024} (Proposition 9), the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.

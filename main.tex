@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass[pdflatex, sn-basic, Numbered]{sn-jnl}
 \usepackage{lineno}
 \linenumbers
 
@@ -54,15 +54,15 @@
 
 \newcommand{\orcidauthorA}{0000-0000-000-000X}
 
-\author{Emmanuel Gnandi$^{1}$}
-\address{INSA de Toulouse, D\'epartement de G\'enie Math\'ematique,
-Universit\'e de Toulouse, France}
+\author[1]{\fnm{Gnandi} \sur{Emmanuel} }
 \email{kpanteemmanuel@gmail.com, gnandi@insa-toulouse.fr}
+\affil[1]{\orgname{INSA, Université de Toulouse} \orgdiv{D\'epartement de G\'enie Math\'ematique}
+\orgaddress{\street{135 avenue de Rangueil}, \city{Toulouse} \postcode{31077}}}
 
-\author{St\'ephane Puechmorel$^{2}$}
-\address{\'Ecole Nationale de l'Aviation Civile,
-Universit\'e de Toulouse}
+\author*[2]{\fnm{Puechmorel}\sur{St\'ephane} }
 \email{stephane.puechmorel@enac.fr}
+\affil*[2]{\orgname{ENAC, Université de Toulouse}, \orgdiv{Laboratoire ENAC}
+\orgaddress{\street{7, Avenue Edouard Belin}, \city{Toulouse}, \postcode{31055}}}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}{Corollary}[section]
@@ -73,7 +73,7 @@ Universit\'e de Toulouse}
 \newtheorem{nota}[thm]{Notation}
 \numberwithin{equation}{section}
 
-\subjclass[2020]{Primary 53A15, 53C15, 53B05; 
+\pacs{Primary 53A15, 53C15, 53B05; 
                  Secondary 53C55, 53D35, 57R17, 53C50, 53C25}
 
 \keywords{Hessian metrics, K\"ahler mapping torus, flat affine connection, 
@@ -92,7 +92,5 @@ Koszul form $\omega$ of a Hessian manifold $(M^d, g, \nabla)$.
 \input{introduction}
 \input{preliminaries}
 \input{contributions}
-
-\bibliographystyle{splncs04}
-\bibliography{main.bib}
+\bibliography{main}
 \end{document}

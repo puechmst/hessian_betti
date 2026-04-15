@@ -10,8 +10,7 @@ codimension-one foliation on $M^d$. Suppose there exists a leaf $L$ of $\mathcal
 1 \le b_1(M^d) \le d \quad (\text{resp. } 2 \le b_1(M^d) \le d,\; b_2(M^d) \ge 1)
 \]
 whenever the leaves of $\mathcal{F}_\omega$ are compact (resp. dense in $M^d$). 
-Moreover, $b_1(M^d) = d$ if and only if $M^d$ is isometric to the flat torus $\mathbb{T}^d$. 
-If additionally $\operatorname{Ric}^g|_{TL\times TL} > 0$ and $d \in \{3,4\}$, then $b_1(M^d) \in \{1, d\}$.
+Moreover, $b_1(M^d) = d$ if and only if $M^d$ is isometric to the flat torus $\mathbb{T}^d$. If additionally $\operatorname{Ric}^g|_{TL\times TL} > 0$ and $d \in \{3,4\}$, then $b_1(M^d) \in \{1, d\}$.
 \end{thm}
 
 
@@ -227,7 +226,7 @@ Corollary~\ref{cor:no-nonneg-ricci}.
 \end{proof}
 
 The following proposition gives a complete classification of closed, 
-oriented Hessian $3$-manifolds satisfying the ricci condition 
+oriented Hessian $3$-manifolds satisfying the Ricci condition 
 of Theorem~\ref{thm:main}.
 
 \begin{prop}\label{pro:dim3}
@@ -285,9 +284,16 @@ b_1(M) \;\leq\; b_1(\hat{M}) \;\leq\; d.
 \]
 \end{rem}
 
+We can now state the following corollary.
+
 \begin{cor}
-
+Let $(M^3, g,\nabla)$ be a compact non-orientable $3$-dimensional Hessian manifold. Suppose that $(\hat{M}^3,\pi^*g, \pi^*\nabla)$ as defined in Remark~\ref{rem:nonorientable} satisfies the assumptions of Theorem~\ref{thm:main}. Then $\hat{M}^3$ is diffeomorphic to one of the manifolds in the list in Proposition~\ref{pro:dim3}, and $M^3$ is one of $\mathfrak{B}_1$, $\mathfrak{B}_2$, $\mathfrak{B}_3$, $\mathfrak{B}_4$ in the notation of \citep{Wolf1974} (pp.~122--123) and $b_{1}(M^3)\in \{1, 2\}$.
 \end{cor}
+\begin{proof}
+Since $(M^3,g,\nabla)$ is a compact non-orientable Hessian manifold, we consider its orientable double cover $\pi \colon \hat{M}^3 \to M^3$ as defined in Remark~\ref{rem:nonorientable}. The covering map $\pi$ is a local isometry with respect to the pulled-back metric $\pi^{*}g$, and $\pi^{*}\nabla$ is the corresponding pulled-back connection. In particular, $(\hat{M}^3,\pi^{*}g,\pi^{*}\nabla)$ is a compact orientable Hessian manifold satisfying the hypotheses of Theorem~\ref{thm:main} by assumption; therefore, by that theorem, $\hat{M}^3$ is diffeomorphic to one of the manifolds appearing in the list of Proposition~\ref{pro:dim3}.
+Let $\hat{g} = \pi^{*}g$ be the pull-back of $g$. Then $(\hat{M}^3, \hat{g})$ and $(M^3, g)$ are locally isometric. It follows that $(M^3,g)$ is a flat Riemannian manifold. By the classification of compact non-orientable flat Riemannian $3$-manifolds \citep{Wolf1974}, $M^3$ is diffeomorphic to one of the four manifolds $\mathfrak{B}_1, \mathfrak{B}_2, \mathfrak{B}_3, \mathfrak{B}_4$ (in the notation of \citep{Wolf1974} (pp.~122--123)). Moreover, the first homology group $H_1(M^3,\mathbb{Z})$ is one of $\mathbb{Z} \times \mathbb{Z} \times \mathbb{Z}_2$, $\mathbb{Z} \times \mathbb{Z}$, $\mathbb{Z} \times \mathbb{Z}_2 \times \mathbb{Z}$, or $\mathbb{Z} \times \mathbb{Z}_4$. From this we deduce that $b_{1}(M^3)\in \{1, 2\}$.
+\end{proof}
 
-
-
+\section*{Acknowledgments}	
+  
+ The authors are grateful to Aziz El Kacimi Alaoui (Universit\'e Polytechnique Hauts-de-France, Laboratoire DMATHS-C\'ERAMATHS) for invaluable discussions on codimension foliation and for his support.

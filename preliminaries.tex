@@ -266,8 +266,162 @@ by Koszul's characterization of hyperbolicity, is positive definite and thus end
 The local exactness of closed forms allows one to write $\beta = d\varphi$ for some smooth function $\varphi$, 
 under which $\nabla\beta$ reduces to the Hessian $d^2\varphi$.
 
+Let $\left( M, \nabla \right)$ be a locally flat gauge structure. It defines a product on the space $\chi(M)$ of smooth sections of $TM$ as:
+\begin{equation}
+\label{eq:product}
+    X \cdot Y = \nabla_X Y, \, X,Y \in \chi(M).
+\end{equation}
+The commutator $X\cdot Y - Y \cdot X$ is the usual Lie bracket and the associator is given by the relation:
+\begin{equation}
+    \label{eq:associator_nabla}
+    \left( X, Y, Z \right) = \nabla_{\nabla_X Y} Z - \nabla_X \nabla_Y Z = - \nabla^2_{X,Y}Z, \, X, Y, Z \in \chi\left(M\right).
+\end{equation}
+for an arbitrary connection with curvature $R^\nabla,$ the next proposition holds:
+\begin{prop}
+\label{prop:kv_defect}
+For any $X,Y,Z \in \chi\left(M\right):$
+\begin{equation*}
+\label{eq:kv_defect}
+    \left( X, Y, Z \right) - \left( Y, X, Z \right) = - R^\nabla\left( X, Y \right) Z,
+\end{equation*}
+\end{prop}
+When $R^\nabla$ vanishes, the product \ref{eq:product} provides $\chi(M)$ with a Koszul-Vinberg, (or pre-Lie) algebra structure. To any locally flat gauge structure, there is thus an associated Koszul-Vinberg (KV in short) algebra. The next proposition is very classical 
+\begin{prop}
+\label{prop:subjacent_lie}
+Let $(A,\cdot)$ be a KV algebra. The bracket:
+\begin{equation*}
+\left [ X, Y \right ] = X \cdot Y - Y \cdot X
+\end{equation*}
+define a Lie algebra structure on $A,$ called the subjacent Lie algebra.
+\end{prop}
+\begin{proof}
+The Jacobi identity comes directly from the next expression:
+\begin{equation*}
+    \begin{split}
+        & \bracket{X}{\bracket{Y}{Z}} + \bracket{Z}{\bracket{X}{Y}} + \bracket{Y}{\bracket{Z}{X}} = \\
+        & \left( X, Y , Z \right) - \left( X, Z , Y \right) + \left( Y, Z , X \right) 
+         +\left( Z, X , Y \right) - \left( Z, Y , X \right) - \left( Y, X , Z \right)
+    \end{split}
+\end{equation*}
+\end{proof}
+\begin{rem}
+When the connection $\nabla$ is torsion-free, the subjacent Lie algebra 
+is $\chi(M)$, the Lie algebra of vector fields.
+\end{rem}
+\begin{defn}[\citep{bai2008}]
+Let $A$ be a KV algebra. A KV-module $V$ is a vector space equipped with respective left and right actions:
+\[
+X \triangleleft v, v \triangleright X, \, X \in A, v \in V
+\]
+such that $\triangleleft$ is a Lie algebra representation from the subjacent Lie algebra of $A$ to  $\mathfrak{gl}(V)$ and $\triangleright$  satisfies:
+\[
+\left( X \triangleleft v \right) \triangleright Y - X \triangleleft \left( 
+v \triangleright Y \right) = \left( v \triangleright X \right) \triangleright Y - v \triangleright \left( X \cdot Y \right), \, X,Y \in A, \, v \in V.
+\]
+\end{defn}
 \begin{defn}
-Let $(M,\nabla)$ be a locally flat manifold. The \emph{Koszul--Vinberg complex} is defined as
+    \label{def:kv_complex}
+    Let $A$ be a KV algebra and $V$ a $A$-module.For any positive integer $q$, $C^q\left( A, V \right) = \hom_{\R} \left( \otimes^q A, V \right)$ has a natural $KV$-module structure with actions:
+    \begin{equation}
+        \label{eq:kv_cq}
+        \begin{split}
+            & \left( a \triangleleft f \right)\left( a_1 \otimes \dots \otimes a_q \right) = a \triangleleft f\left( a_1 \otimes \dots \otimes a_q \right) - \sum_{i=1}^q f\left( 
+                a_1 \otimes \dots \otimes \left(a \circ a_i\right) \otimes \dots a_q
+             \right) \\
+             & \left( f \triangleright a \right)\left( a_1 \otimes \dots \otimes a_q \right) = f\left( a_1 \otimes \dots \otimes a_q \right) \triangleright a.
+        \end{split}
+    \end{equation}
+\end{defn}
+\begin{defn}
+\label{def:kv_face_insert}
+Let $q$ be a positive integer. The face (resp. insertion) operator is defined by:
+\begin{equation}
+    \label{eq:kv_face}
+    \partial_i \colon a_1 \otimes \dots \otimes a_q = a_1 \otimes \dots \otimes \hat{a}_i \otimes \dots \otimes a_q
+\end{equation}
+resp.
+\begin{equation}
+    \label{eq:kv_insert}
+    \mathcal{I}_i(a) \colon a_1 \otimes \dots \otimes a_q = 
+    \begin{cases}
+        a_1 \otimes \dots  a_{i-1} \otimes a \otimes a_i \otimes \dots \otimes a_q, \, a \in A, \, i=2 \dots q\\
+        a \otimes a_1 \otimes \dots \otimes a_q, \, a \in A, i=1 \\
+        a_1 \otimes \dots \otimes a_q \otimes a, \, a \in A, i=q+1 \\
+    \end{cases}
+\end{equation}
+\end{defn}
+\begin{defn}
+    \label{def:kv_coboundary}
+    The coboundary operator $\delta^q \colon C^q \left( A,V \right) \to C^{q+1}\left( A,V \right)$ is defined by \citep{Boyom2002}:
+    \begin{equation}
+        \label{eq:coboundary}
+        \delta^q f = \sum_{j=1 \dots q} \left( -1 \right)^j \left[ a_j  \triangleleft \left(f \partial_j\right) +  f\left( \mathcal{I}_q(a_j)\partial_{q}\partial_j\right)\triangleright a_{q+1}  \right]
+    \end{equation}
+\end{defn}
+The fact that $\delta^2=0$ can be established by brute force \citep{Boyom2002}, but is in fact a consequence of the relations between $\triangleleft$ and $\triangleright,$ as indicated by the next propositions:
+\begin{defn}
+\label{def:def_theta_op}
+Let $1 \leq i < q$ be integers. $\theta_i \colon \otimes^q A \to \otimes^{q-1} A$ is defined by:
+\begin{equation}
+    \label{eq:def_theta}
+    \theta_i \left( a_1 \otimes \dots \otimes a_q 
+    \right) = a_i \triangleleft \partial_i \left( a_1 \otimes \dots \otimes a_q 
+    \right). 
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:theta_simplicial}
+Let $1 < i < j < q$ be three integers. Then, for $\xi \in \otimes^q A$:
+\begin{equation}
+\label{eq:theta_expression}
+    \theta_j \theta_i \xi = \left(a_i \cdot a_{j+1}  + a_{j+1}\cdot a_i \right)\triangleleft \partial_i \partial_{j+1} \xi.
+\end{equation}
+Furthermore, the following semi-simplicial identity holds:
+\begin{equation}
+    \label{eq:theta_simplicial}
+    \theta_j \theta_i \xi = \theta_{i} \theta_{j+1} \xi.
+\end{equation}
+\end{prop}
+\begin{defn}
+\label{def:def_theta}
+Let $1 \leq i < q$ be integers. $\eta_i$ is defined by:
+\begin{equation}
+    \label{eq:first_term_delta}
+    \eta_i \colon f \in C^q(A,V) \to a_i \triangleleft \left( f \partial_i \right) 
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:eta_simplicial}
+Let $1 < i < j < q$ be three integers and $f \in C^q(A,V)$. Then:
+\begin{equation}
+\label{eq:eta_expression}
+    \eta_j \eta_i f = \left(a_i a_{j+1}  + a_{j+1} a_i \right)\triangleleft \left(f \partial_i \partial_{j+1} \right).
+\end{equation}
+Furthermore, the following semi-simplicial identity holds:
+\begin{equation}
+    \label{eq:eta_simplicial}
+    \eta_j \eta_i f = \eta_{i} \eta_{j+1} f.
+\end{equation}
+\end{prop}
+Applying propositions \ref{prop:theta_simplicial}, \ref{prop:eta_simplicial} to the first term of definition of $\delta$ shows that it satisfies a semi-simplicial identity. Finally, let us consider the operator:
+\begin{equation}
+    \label{eq:rho_operator}
+    \rho_i \colon f \in C^q(A,V) \mapsto f\left(\mathcal{I}_q(a_i)\partial_q \partial_i\right) \triangleright a_{q+1}
+\end{equation}
+Then, for $f \in C^q(A,V)$:
+\begin{equation}
+    \label{eq:rho_semi_simplicial}
+    \begin{split}
+    &\rho_j \rho_i f + \rho_j \eta_i f + \eta_j \rho_i f - \left( \rho_i \rho_{j+1} + \rho_i \eta_{j+1} + \eta_i \rho_{j+1} \right)f = \\
+    &\left(a_i \triangleleft f\right) \triangleright a_{q+1} - a_i \triangleleft \left( f \triangleright a_{q+1} \right) -
+    \left(f \triangleright a_{q+1}\right) \triangleright a_i 
+    - f \triangleright \left( a_{q+1} . a_i \right) = 0.
+    \end{split}
+\end{equation}
+Hence the two terms in the sum defining $\delta$ satisfy a semi-simplicial identity, proving $\delta^2=0.$
+In the present work, the previous construction will be applied to $C^\infty(M),$ as indicated below.
+\begin{defn}
+Let $(M,\nabla)$ be a locally flat gauge structure. The \emph{Koszul--Vinberg complex} is defined as
 \[
 \bigl(C(\nabla), \delta \bigr) = \left( \, C(\nabla) = \bigoplus_{j \geq 0} C^j(\nabla),
 \quad \delta_j : C^j(\nabla) \to C^{j+1}(\nabla) \,\right),
@@ -280,31 +434,17 @@ C^j(\nabla) = \mathrm{Hom}_{\mathbb{R}}\!\left( \otimes^j \mathcal{X}(M), \, C^\
 \quad j \geq 1.
 \]
 
-The coboundary operator $\delta_j$ is defined by
+The coboundary operator $\delta_j$ is defined as before, except for the $0$-th term:
 \begin{equation}
 \delta_0 f = df, \quad \forall f \in C^0(\nabla),
 \end{equation}
 and for $j \ge 1$,
-\begin{equation}
-\begin{aligned}
-\delta_j f (X_1 \otimes \cdots \otimes X_{q+1}) 
-&= \sum_{i=1}^j (-1)^i \Bigl( d\bigl(f(\ldots, \hat{X}_i, \ldots, X_{j+1})\bigr)(X_i) \\
-&\hspace{1.5cm} - \sum_{k \neq i} f(\ldots, \hat{X}_i, \ldots, \nabla_{X_i}X_k, \ldots) \Bigr),
-\end{aligned}
-\end{equation}
 
-where the hat $\hat{X}_i$ means omission of $X_i$.  
-
-The \emph{Total Koszul--Vinberg cohomology} is the graded vector space
+The \emph{Total Koszul--Vinberg cohomology} is then the graded vector space
 \begin{equation}
 H^j_{\tau}(\nabla) = \ker \delta_j \, / \, \mathrm{im}\,\delta_{j-1}.
 \end{equation}
 \end{defn}
 
-Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra 
-$A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex 
-$C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$.
-According to \citep{boyom2024} (Proposition 9), 
-the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex
- $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, 
- and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.
+Given a Hessian manifold $(M, g, \nabla)$, we construct a Koszul–Vinberg algebra $A_{\nabla} = (\mathcal{X}(M), \nabla)$ and its associated KV-complex $C_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M))$.
+According to \citep{boyom2024} (Proposition 9), the Hessian metric $g$ is a $1$-cocycle of the scalar KV complex $(\mathcal{C}_{\mathrm{KV}}(A_{\nabla}, C^{\infty}(M)))$, and $[g] \in H^{2}_{\mathrm{KV}}(M, C^{\infty}(M))$.
